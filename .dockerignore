@@ -1,0 +1,6 @@
+audit
+SUBAGENT_REPORT.md
+.git
+*.log
+node_modules
+dist

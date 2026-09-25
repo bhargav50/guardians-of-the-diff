@@ -1,0 +1,45 @@
+{
+  "name": "guardians-of-the-diff",
+  "version": "0.1.0",
+  "description": "An OpenCode permission plugin that auto-evaluates routine tool calls while always requiring human approval for code edits.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --external @opencode/plugin --target bun --outdir dist",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "check:shell": "bash -n build.sh run.sh && sh -n scripts/container-entrypoint.sh",
+    "check": "bun run typecheck && bun run test && bun run build && bun run check:shell"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "permissions",
+    "human-in-the-loop",
+    "coding-agent"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhargav50/guardians-of-the-diff.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bhargav50/guardians-of-the-diff/issues"
+  },
+  "homepage": "https://github.com/bhargav50/guardians-of-the-diff#readme",
+  "dependencies": {
+    "@opencode/plugin": "2.0.15"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.2",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}

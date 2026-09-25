@@ -1,0 +1,8 @@
+{
+  "name": "guardians-of-the-diff-sandbox",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@opencode/plugin": "2.0.15"
+  }
+}
